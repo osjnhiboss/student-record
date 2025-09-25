@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>View Records</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1>School ATS</h1>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="attendance.html">Enter Records</a>
+        <a href="viewRecords.html" class="active">View Records</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="panel card">
+      <div class="card-body">
+        <h2>Student Records</h2>
+
+        <div class="controls">
+          <input id="search" placeholder="Search name or exam..." />
+          <select id="sortBy">
+            <option value="newest">Newest</option>
+            <option value="scoreDesc">Top Score</option>
+            <option value="scoreAsc">Lowest Score</option>
+            <option value="attendanceDesc">Highest Attendance</option>
+          </select>
+          <button id="exportCsv" class="btn">Export CSV</button>
+          <button id="clearAll" class="btn danger">Clear All</button>
+        </div>
+
+        <div id="alerts" class="mt"></div>
+
+        <div class="table-wrap mt">
+          <table id="recordsTable">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Exam</th>
+                <th>Attendance</th>
+                <th>Score</th>
+                <th>Grade</th>
+                <th>Teacher</th>
+                <th>Time</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+
+        <div id="stats" class="mt small muted"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container small muted">© 2025 — School ATS (Local Demo)</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="viewRecords.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Profile — School ATS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1>School ATS</h1>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="attendance.html">Enter Records</a>
+        <a href="profile.html" class="active">Profile</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="card">
+      <div class="card-body">
+        <h2>Your Profile</h2>
+        <div class="small muted">Manage your user (stored locally)</div>
+        <form id="profileForm">
+          <label>Username
+            <input id="pUsername" type="text" required>
+          </label>
+          <label>Role
+            <select id="pRole">
+              <option value="teacher">Teacher</option>
+              <option value="admin">Admin</option>
+            </select>
+          </label>
+          <label>Change Password
+            <input id="pPassword" type="password">
+          </label>
+          <div class="actions full">
+            <button id="updateProfile" class="btn" type="button">Update</button>
+            <button id="logoutBtn" class="btn ghost" type="button">Logout</button>
+          </div>
+        </form>
+
+        <div id="profileMsg" class="mt"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container small muted">© 2025 — School ATS (Local Demo)</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>

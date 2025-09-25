@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enter Attendance & Scores</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1>School ATS</h1>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="attendance.html" class="active">Enter Records</a>
+        <a href="viewRecords.html">View Records</a>
+        <a href="login.html">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="panel card">
+      <div class="card-body">
+        <h2>Manual Entry</h2>
+        <p class="muted small">Teacher inputs student name, attendance % and test/exam score. Score is used to compute grade. Alerts appear for scores below 45%.</p>
+
+        <form id="attendanceForm" class="form-grid">
+          <label>Student Full Name
+            <input id="studentName" type="text" placeholder="e.g. Jane Doe" required>
+          </label>
+
+          <label>Attendance (%) 
+            <input id="attendancePct" type="number" min="0" max="100" step="1" placeholder="0 - 100" required>
+          </label>
+
+          <label>Score (0 - 100)
+            <input id="score" type="number" min="0" max="100" step="0.01" placeholder="Test or exam score" required>
+          </label>
+
+          <label>Test / Exam Title
+            <input id="examTitle" type="text" placeholder="e.g. Midterm - Maths" required>
+          </label>
+
+          <div class="full actions">
+            <button id="saveRecord" type="button" class="btn">Save Record</button>
+            <button id="clearForm" type="button" class="btn ghost">Clear</button>
+          </div>
+        </form>
+
+        <hr>
+
+        <h3>Scan / Bulk Import (CSV)</h3>
+        <p class="muted small">Upload CSV with header: name,attendance,score,exam (you can export sample from View Records)</p>
+        <input id="csvFile" type="file" accept=".csv" />
+        <div class="mt actions">
+          <button id="importCsv" class="btn">Import CSV</button>
+          <button id="markAllPresent" class="btn ghost">Mark All Present (100%)</button>
+        </div>
+
+        <div id="feedback" class="mt"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container small muted">© 2025 — School ATS (Local Demo)</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="attendance.js"></script>
+</body>
+</html>

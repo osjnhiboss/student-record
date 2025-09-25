@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login — School ATS</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1>School ATS</h1>
+      <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="login.html" class="active">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="card">
+      <div class="card-body">
+        <h2>Login (Teacher / Admin)</h2>
+        <form id="loginForm">
+          <label>Username
+            <input id="username" type="text" required placeholder="teacher@example">
+          </label>
+          <label>Password
+            <input id="password" type="password" required placeholder="••••••">
+          </label>
+          <div class="actions full">
+            <button type="submit" class="btn">Login</button>
+            <button id="createDemoAdmin" type="button" class="btn ghost">Create Demo Admin</button>
+          </div>
+        </form>
+
+        <div class="mt small muted">Default admin: username <strong>admin</strong> / password <strong>admin123</strong> (you can create teachers)</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container small muted">© 2025 — School ATS (Local Demo)</div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>
